@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "wyYgpw+5Ws/NW5p5x657qVoQpzALRUg8oZYooqAih0nubJvky+U1JrWKhNqF4jCx5sOIsXkhFSDrCGGU13Kdgg==",
+  "success": true,
+  "projectFilePath": "D:\\_DESENVOLVIMENTO\\CODIGO FONTE\\CompactadorMulti\\CompactadorMulti\\CompactadorMulti.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\USER\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\3.1.10\\microsoft.aspnetcore.app.ref.3.1.10.nupkg.sha512"
+  ],
+  "logs": []
+}
