@@ -10,6 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+
 using System.IO.Compression;
 namespace CompactadorMulti
 {
@@ -30,8 +31,13 @@ namespace CompactadorMulti
             //dataGridView1.ColumnAdded("teste");
             foreach (var item in GetDirectory)
             {
+                FileInfo filein = new FileInfo(item);
 
-                lista.Add(new Arquivos { Nome = item });
+                lista.Add(new Arquivos { Nome = filein.Name,Diretorio = item });
+
+           
+               
+         
 
             }
 
@@ -46,6 +52,8 @@ namespace CompactadorMulti
 
         public class Arquivos
         {
+            public string Diretorio { get; set; }
+
             public string Nome { get; set; }
 
         }
@@ -54,8 +62,14 @@ namespace CompactadorMulti
         {
             var name = dgvResultado.Rows[e.RowIndex].Cells[0].Value;
             txtCompactar.Text = name.ToString();
-            var a = lista.First(a => a.Nome == name);
-            lista.Remove(a);
+
+            //var a = lista.First(a => a.Diretorio == name);
+
+            FileInfo filein = new FileInfo(name.ToString());
+            txtNameFile.Text = filein.Name;
+            //MessageBox.Show(filein.Name,"teste");
+            //var a = lista.First(a => a.Nome == name);
+            //lista.Remove(a);
 
 
 
@@ -66,32 +80,77 @@ namespace CompactadorMulti
         {
             try
             {
-                string diretorio = @"D:\_DESENVOLVIMENTO\CODIGO FONTE\Nova pasta";
-                string arquivo = txtCompactar.Text /*=/* txtCompactar.Text + @"D:\_DESENVOLVIMENTO\CODIGO FONTE\blogDev.rar"*/ ;
-                if (File.Exists(arquivo))
-                {
+                Compactar(txtCompactar.Text);
 
-                  
-
-
-                    File.Delete(arquivo);
-                }
-                else
-                {
-              
-                    ZipFile.CreateFromDirectory(diretorio, arquivo+".zip");
-                  
-                    MessageBox.Show("Concluido", "");
-                }
-
+                Rename(txtCompactar.Text + ".zip", @$"D:\_DESENVOLVIMENTO\CODIGO FONTE\{txtNameFile.Text} {DateTime.Now.ToString("dd-MM-yyyy  HH-mm-ss")}.zip");
             }
             catch (Exception a)
             {
-                Console.WriteLine(a);
+                MessageBox.Show(a.ToString(), "");
             }
-        
+
+
 
 
         }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        public void Compactar(string dir)
+        {
+
+            string parent = Path.GetDirectoryName(dir);
+            string name = Path.GetFileName(dir) + ".zip";
+
+            string fileName = Path.Combine(parent, name);
+
+
+            if (File.Exists(fileName))
+            {
+                File.Delete(fileName);
+            }
+
+            ZipFile.CreateFromDirectory(dir, fileName, CompressionLevel.Fastest, true);
+
+            MessageBox.Show("Concluido", "");
+
+
+        }
+
+
+        public void Rename(string originalName , string NewName)
+        {
+            File.Move(originalName, NewName);
+        }
+        //try
+        //{
+        //    //    string diretorio = @"D:\_DESENVOLVIMENTO\CODIGO FONTE";
+        //    string arquivo = txtCompactar.Text /*=/* txtCompactar.Text + @"D:\_DESENVOLVIMENTO\CODIGO FONTE\blogDev.rar"*/ ;
+        //    if (File.Exists(arquivo))
+        //    {
+
+
+
+
+        //        File.Delete(arquivo);
+        //    }
+        //    else
+        //    {
+
+
+
+        //        ZipFile.CreateFromDirectory(diretorio, arquivo+".zip");
+
+        //        MessageBox.Show("Concluido", "");
+        //    }
+
+        //}
+        //catch (Exception a)
+        //{
+        //    Console.WriteLine(a);
+        //}
     }
 }
