@@ -34,14 +34,7 @@ namespace CompactadorMulti
                 FileInfo filein = new FileInfo(item);
 
                 lista.Add(new Arquivos { Nome = filein.Name,Diretorio = item });
-
-           
-               
-         
-
             }
-
-
 
             //var a = arquivos;
             //dataGridView1.Width = 20000;
@@ -80,7 +73,7 @@ namespace CompactadorMulti
         {
             try
             {
-                Compactar(txtCompactar.Text);
+                 Compactar(txtCompactar.Text);
 
                 Rename(txtCompactar.Text + ".zip", @$"D:\_DESENVOLVIMENTO\CODIGO FONTE\{txtNameFile.Text} {DateTime.Now.ToString("dd-MM-yyyy  HH-mm-ss")}.zip");
             }
@@ -99,7 +92,7 @@ namespace CompactadorMulti
 
         }
 
-        public void Compactar(string dir)
+        public async void Compactar(string dir)
         {
 
             string parent = Path.GetDirectoryName(dir);
@@ -113,7 +106,7 @@ namespace CompactadorMulti
                 File.Delete(fileName);
             }
 
-            ZipFile.CreateFromDirectory(dir, fileName, CompressionLevel.Fastest, true);
+           ZipFile.CreateFromDirectory(dir, fileName, CompressionLevel.Fastest, true);
 
             MessageBox.Show("Concluido", "");
 
@@ -124,6 +117,16 @@ namespace CompactadorMulti
         public void Rename(string originalName , string NewName)
         {
             File.Move(originalName, NewName);
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
         //try
         //{
