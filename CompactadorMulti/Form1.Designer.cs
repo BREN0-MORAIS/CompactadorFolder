@@ -42,10 +42,16 @@ namespace CompactadorMulti
             this.txtEnviar = new System.Windows.Forms.TextBox();
             this.txtCompactar = new System.Windows.Forms.TextBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.txtDiretorioPrincipal = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.txtDiretorioBackup = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvResultado)).BeginInit();
+            this.tabPage2.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -71,7 +77,7 @@ namespace CompactadorMulti
             // 
             // tabPage1
             // 
-            this.tabPage1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.tabPage1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(101)))), ((int)(((byte)(216)))));
             this.tabPage1.Controls.Add(this.label3);
             this.tabPage1.Controls.Add(this.label2);
             this.tabPage1.Controls.Add(this.label1);
@@ -86,7 +92,7 @@ namespace CompactadorMulti
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage1.Size = new System.Drawing.Size(522, 385);
             this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "COMPCTADOR";
+            this.tabPage1.Text = "Compactar";
             // 
             // label3
             // 
@@ -176,13 +182,59 @@ namespace CompactadorMulti
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.button1);
+            this.tabPage2.Controls.Add(this.label5);
+            this.tabPage2.Controls.Add(this.txtDiretorioBackup);
+            this.tabPage2.Controls.Add(this.label4);
+            this.tabPage2.Controls.Add(this.txtDiretorioPrincipal);
             this.tabPage2.Location = new System.Drawing.Point(4, 24);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage2.Size = new System.Drawing.Size(522, 385);
             this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "tabPage2";
+            this.tabPage2.Text = "Configurar";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // txtDiretorioPrincipal
+            // 
+            this.txtDiretorioPrincipal.Location = new System.Drawing.Point(18, 66);
+            this.txtDiretorioPrincipal.Name = "txtDiretorioPrincipal";
+            this.txtDiretorioPrincipal.Size = new System.Drawing.Size(485, 23);
+            this.txtDiretorioPrincipal.TabIndex = 0;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(20, 42);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(102, 15);
+            this.label4.TabIndex = 1;
+            this.label4.Text = "Diretorio Principal";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(21, 102);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(111, 15);
+            this.label5.TabIndex = 3;
+            this.label5.Text = "Diretorio de Backup";
+            // 
+            // txtDiretorioBackup
+            // 
+            this.txtDiretorioBackup.Location = new System.Drawing.Point(19, 126);
+            this.txtDiretorioBackup.Name = "txtDiretorioBackup";
+            this.txtDiretorioBackup.Size = new System.Drawing.Size(485, 23);
+            this.txtDiretorioBackup.TabIndex = 2;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(177, 312);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(147, 55);
+            this.button1.TabIndex = 4;
+            this.button1.Text = "Salvar";
+            this.button1.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
@@ -200,6 +252,8 @@ namespace CompactadorMulti
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvResultado)).EndInit();
+            this.tabPage2.ResumeLayout(false);
+            this.tabPage2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -219,6 +273,11 @@ namespace CompactadorMulti
         private System.Windows.Forms.TextBox txtEnviar;
         private System.Windows.Forms.TextBox txtCompactar;
         private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.TextBox txtDiretorioPrincipal;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox txtDiretorioBackup;
+        private System.Windows.Forms.Label label4;
     }
 }
 

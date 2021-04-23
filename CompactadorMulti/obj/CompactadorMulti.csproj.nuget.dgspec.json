@@ -1,24 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "D:\\_DESENVOLVIMENTO\\CODIGO FONTE\\CompactadorFolder\\CompactadorFolder\\CompactadorMulti\\CompactadorMulti.csproj": {}
+    "E:\\_DEV BRENO-MORAIS\\_Código-Fonte\\CompactadorFolder\\CompactadorMulti\\CompactadorMulti.csproj": {}
   },
   "projects": {
-    "D:\\_DESENVOLVIMENTO\\CODIGO FONTE\\CompactadorFolder\\CompactadorFolder\\CompactadorMulti\\CompactadorMulti.csproj": {
+    "E:\\_DEV BRENO-MORAIS\\_Código-Fonte\\CompactadorFolder\\CompactadorMulti\\CompactadorMulti.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\_DESENVOLVIMENTO\\CODIGO FONTE\\CompactadorFolder\\CompactadorFolder\\CompactadorMulti\\CompactadorMulti.csproj",
+        "projectUniqueName": "E:\\_DEV BRENO-MORAIS\\_Código-Fonte\\CompactadorFolder\\CompactadorMulti\\CompactadorMulti.csproj",
         "projectName": "CompactadorMulti",
-        "projectPath": "D:\\_DESENVOLVIMENTO\\CODIGO FONTE\\CompactadorFolder\\CompactadorFolder\\CompactadorMulti\\CompactadorMulti.csproj",
-        "packagesPath": "C:\\Users\\USER\\.nuget\\packages\\",
-        "outputPath": "D:\\_DESENVOLVIMENTO\\CODIGO FONTE\\CompactadorFolder\\CompactadorFolder\\CompactadorMulti\\obj\\",
+        "projectPath": "E:\\_DEV BRENO-MORAIS\\_Código-Fonte\\CompactadorFolder\\CompactadorMulti\\CompactadorMulti.csproj",
+        "packagesPath": "C:\\Users\\breno\\.nuget\\packages\\",
+        "outputPath": "E:\\_DEV BRENO-MORAIS\\_Código-Fonte\\CompactadorFolder\\CompactadorMulti\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
           "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
         ],
         "configFilePaths": [
-          "C:\\Users\\USER\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\breno\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
@@ -28,6 +28,8 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "E:\\BIBLIOTECAS E DLLS\\FastReport-Dll": {},
+          "E:\\PRODUTIVIDADE-CODIGOS\\Fast-Report\\Nugets\\Core3": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -61,12 +63,6 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "downloadDependencies": [
-            {
-              "name": "Microsoft.AspNetCore.App.Ref",
-              "version": "[3.1.10, 3.1.10]"
-            }
-          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
@@ -75,7 +71,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.200-preview.20614.14\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.201\\RuntimeIdentifierGraph.json"
         }
       }
     }

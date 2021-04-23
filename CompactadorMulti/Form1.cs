@@ -17,8 +17,8 @@ namespace CompactadorMulti
     public partial class Form1 : Form
     {
 
-        public static DirectoryInfo directory = new DirectoryInfo(@"D:\_DESENVOLVIMENTO\CODIGO FONTE");
-        public static string[] GetDirectory = Directory.GetDirectories(@"D:\_DESENVOLVIMENTO\CODIGO FONTE\");
+        public static DirectoryInfo directory = new DirectoryInfo(@"E:\_VERSIONAMENTO-BITBUCKET");
+        public static string[] GetDirectory = Directory.GetDirectories(@"E:\_VERSIONAMENTO-BITBUCKET\");
 
         Collection<Arquivos> lista = new Collection<Arquivos>();
         FileInfo[] arquivos = directory.GetFiles(@"*.*");
@@ -75,7 +75,7 @@ namespace CompactadorMulti
             {
                  Compactar(txtCompactar.Text);
 
-                Rename(txtCompactar.Text + ".zip", @$"D:\_DESENVOLVIMENTO\CODIGO FONTE\{txtNameFile.Text} {DateTime.Now.ToString("dd-MM-yyyy  HH-mm-ss")}.zip");
+                Rename(txtCompactar.Text + ".zip", @$"E:\_VERSIONAMENTO-BITBUCKET\{txtNameFile.Text} {DateTime.Now.ToString("dd-MM-yyyy  HH-mm-ss")}.zip");
             }
             catch (Exception a)
             {
