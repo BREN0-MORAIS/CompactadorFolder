@@ -12,20 +12,56 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 using System.IO.Compression;
+using System.Xml.Serialization;
+using System.Xml;
+
 namespace CompactadorMulti
 {
     public partial class Form1 : Form
     {
 
-        public static DirectoryInfo directory = new DirectoryInfo(@"E:\_VERSIONAMENTO-BITBUCKET");
-        public static string[] GetDirectory = Directory.GetDirectories(@"E:\_VERSIONAMENTO-BITBUCKET\");
+        public static DirectoryInfo directory = new DirectoryInfo(@"");
+        public static string[] GetDirectory = Directory.GetDirectories(@"");
 
         Collection<Arquivos> lista = new Collection<Arquivos>();
-        FileInfo[] arquivos = directory.GetFiles(@"*.*");
+        //FileInfo[] arquivos = directory.GetFiles(@"*.*");
         public Form1()
         {
             InitializeComponent();
 
+            using (XmlReader reader = XmlReader.Create("./Data/Configuracao.xml"))
+            {
+                while (reader.Read())
+                {
+                    if (reader.IsStartElement())
+                    {
+
+                        switch (reader.Name.ToString())
+                        {
+                            case "directorymain":
+                                if (string.IsNullOrEmpty(reader.Value.ToString()))
+                                {
+                                   
+                                    txtDiretorioPrincipal.Text = reader.Value;
+                                }
+                              
+                                break;
+
+                            case "diretorioatual":
+                                if (string.IsNullOrEmpty(reader.ReadString().ToString()))
+                                {
+                               
+                                   
+                                    txtDiretorioBackup.Text = reader.ReadString();
+                                }
+                                break;
+
+                        }
+
+                    }
+
+                }
+            }
 
             Arquivos obj = new Arquivos();
             //dataGridView1.ColumnAdded("teste");
@@ -33,7 +69,7 @@ namespace CompactadorMulti
             {
                 FileInfo filein = new FileInfo(item);
 
-                lista.Add(new Arquivos { Nome = filein.Name,Diretorio = item });
+                lista.Add(new Arquivos { Nome = filein.Name, Diretorio = item });
             }
 
             //var a = arquivos;
@@ -73,7 +109,7 @@ namespace CompactadorMulti
         {
             try
             {
-                 Compactar(txtCompactar.Text);
+                Compactar(txtCompactar.Text);
 
                 Rename(txtCompactar.Text + ".zip", @$"E:\_VERSIONAMENTO-BITBUCKET\{txtNameFile.Text} {DateTime.Now.ToString("dd-MM-yyyy  HH-mm-ss")}.zip");
             }
@@ -106,7 +142,7 @@ namespace CompactadorMulti
                 File.Delete(fileName);
             }
 
-           ZipFile.CreateFromDirectory(dir, fileName, CompressionLevel.Fastest, true);
+            ZipFile.CreateFromDirectory(dir, fileName, CompressionLevel.Fastest, true);
 
             MessageBox.Show("Concluido", "");
 
@@ -114,7 +150,7 @@ namespace CompactadorMulti
         }
 
 
-        public void Rename(string originalName , string NewName)
+        public void Rename(string originalName, string NewName)
         {
             File.Move(originalName, NewName);
         }
@@ -155,5 +191,15 @@ namespace CompactadorMulti
         //{
         //    Console.WriteLine(a);
         //}
+    }
+
+    public class Configure
+    {
+        public Configure()
+        {
+
+        }
+
+
     }
 }
